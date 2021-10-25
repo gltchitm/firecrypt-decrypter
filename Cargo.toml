@@ -1,0 +1,11 @@
+[package]
+name = "firecrypt-decrypter"
+version = "2.0.0"
+edition = "2021"
+
+[dependencies]
+clap = "2.33.3"
+rpassword = "5.0.1"
+rust-argon2 = "0.8.3"
+chacha20poly1305 = "0.9.0"
+zip = "0.5.13"
