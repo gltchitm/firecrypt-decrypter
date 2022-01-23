@@ -2,7 +2,7 @@
 Command line tool for decrypting profiles encrypted with [Firecrypt](https://github.com/gltchitm/firecrypt).
 
 ## About
-Firecrypt currently only supports macOS. This means that the official implementation cannot decrypt profiles on non-macOS devices. Firecrypt Decrypter allows for this to be done. It also serves as a short and simple reference to see how Firecrypt implements cryptography.
+Firecrypt currently only supports macOS and Linux. Firecrypt Decrypter allows for profiles to be decrypted on other platforms. It also serves as a short and simple reference to see how Firecrypt implements cryptography.
 
 ## Protocol Version
 Firecrypt Decrypter only supports Firecrypt Version 2. You need to use a compatible version of Firecrypt to decrypt legacy profiles.
