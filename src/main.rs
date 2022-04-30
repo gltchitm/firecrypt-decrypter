@@ -3,9 +3,9 @@ use argon2::{Config, ThreadMode, Variant, Version};
 use chacha20poly1305::{XChaCha20Poly1305, Key, XNonce};
 use chacha20poly1305::aead::{Aead, NewAead};
 
-use clap::{App, Arg};
+use clap::{Command, Arg};
 
-use rpassword::read_password_from_tty;
+use rpassword::prompt_password;
 
 use std::io::{BufReader, Read, Cursor, copy};
 use std::fs::{File, create_dir, create_dir_all};
@@ -25,16 +25,16 @@ const ARGON2_HASH_LENGTH: u32 = 32;
 const XNONCE_LEN: usize = 24;
 
 fn main() {
-    let matches = App::new("Firecrypt Decrypter")
+    let matches = Command::new("Firecrypt Decrypter")
         .version(VERSION)
         .about("Decryption tool for profiles encrypted with Firecrypt 2")
         .arg(
-            Arg::with_name("profile")
+            Arg::new("profile")
                 .required(true)
                 .help("Path to the .firecrypt file")
         )
         .arg(
-            Arg::with_name("output")
+            Arg::new("output")
                 .required(true)
                 .help("Location to place the decrypted profile folder")
         )
@@ -70,7 +70,7 @@ fn main() {
 
     assert!(magic_version_prefix == MAGIC_VERSION_PREFIX.as_bytes());
 
-    let password = read_password_from_tty(Some("Password:")).unwrap();
+    let password = prompt_password("Password:").unwrap();
 
     let config = Config {
         variant: Variant::Argon2id,

@@ -12,13 +12,13 @@ Firecrypt Decrypter only supports Firecrypt Version 2. You need to use a compati
 USAGE:
     firecrypt-decrypter <profile> <output>
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-
 ARGS:
     <profile>    Path to the .firecrypt file
     <output>     Location to place the decrypted profile folder
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
 ```
 
 ## License
